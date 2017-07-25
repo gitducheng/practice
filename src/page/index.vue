@@ -1,36 +1,36 @@
 <template>
 	<div>
-    <div class="top-logo">
+    <!-- <div class="top-logo">
       <a href=""><img src="../images/logo.png" alt=""></a>
     </div>
     <div class="nav">
       <el-row>
       <el-col :span="16">
-		    <el-menu class="nav-left" mode="horizontal" router>
-  			<el-menu-item index="/user/">Home</el-menu-item>
-  			<el-menu-item index="/user/msg">About</el-menu-item>
-  			<el-menu-item index="/user/info">Projects</el-menu-item>
-        <el-menu-item index="/user/info">Services</el-menu-item>
-        <el-menu-item index="/user/info">Blog</el-menu-item>
-        <el-menu-item index="/user/info">Contact</el-menu-item>
-		    </el-menu> 
+        <el-menu class="nav-left" mode="horizontal" router>
+        <el-menu-item index="./user/">首页</el-menu-item>
+        <el-menu-item index="./user/msg">文章</el-menu-item>
+        <el-menu-item index="./user/info">生活风格</el-menu-item>
+        <el-menu-item index="./user/info">关于</el-menu-item>
+        <el-menu-item index="./user/info">登录</el-menu-item>
+        <el-menu-item index="./user/info">注册</el-menu-item>
+        </el-menu> 
       </el-col>
        <el-col :span="8" class="nav-right">
         <el-input class="search" placeholder="请输入想搜索的内容" icon="search"></el-input>
       </el-col>
       </el-row>
-    </div>
+    </div> -->
 
-    <div class="block carousel">
+    <!-- <div class="block carousel">
     <el-carousel height="600px">
       <el-carousel-item v-for="item in topImgs" :key="item.img">
         <img class="respond-img" :src="item.imgUrl" alt="">
       </el-carousel-item>
     </el-carousel>
-    </div>
+    </div> -->
+    <index></index> 
 
-
-    <div class="about-wrap">
+    <!-- <div class="about-wrap">
       <div class="about-us">
         <h2>ABOUT US</h2>
         <p>Phasellus ultrices nulla quis</p>
@@ -69,10 +69,10 @@
           </el-col>
         </el-row>  
       </div>
-    </div>
+    </div> -->
 
 
-    <div class="our-wrap">
+    <!-- <div class="our-wrap">
       <div class="our-top">
         <h2>Our Latest Works</h2>
         <p>Vestibulum auctor dapibus nequ</p>
@@ -84,10 +84,10 @@
           </el-carousel-item>
         </el-carousel>
       </div>
-    </div>
+    </div> -->
 
     
-    <div class="web-wrap">
+    <!-- <div class="web-wrap">
       <el-row :gutter="20">
         <el-col :span="12">
           <el-row class="web-section" :gutter="20">
@@ -128,10 +128,10 @@
           </el-collapse>
         </el-col> 
       </el-row>
-    </div>
+    </div> -->
 
 
-  <div class="search-section">
+ <!--  <div class="search-section">
     <div class="form-bg">
       <el-input class="footer-search" v-model="input" placeholder="请输入内容"></el-input>
       <el-button type="primary" icon="search">搜索</el-button>
@@ -153,10 +153,10 @@
       </el-form>
       </div>
       </div>
-  </div>
+  </div> -->
 
     
-  <div class="footer">
+  <!-- <div class="footer">
     <el-row class="footer-msg">
         <el-col :span="8" class="footer-item">
           <i class="el-icon-share"></i>
@@ -172,7 +172,7 @@
         </el-col>
     </el-row>
     <p class="last-msg">京 ICP 证 09002463 号|Copyright © 1999-2017, CSDN.NET, All Rights Reserved</p>
-  </div>
+  </div> -->
 
 
 	</div>
@@ -180,113 +180,118 @@
 
 
 <script>
+import index from "./user/index2"
+
   export default {
+    components: {
+      index
+    },
     data() {
       return {
-          topImgs: [{
-            img: "1",
-            imgUrl: "./static/images/1.jpg"
-          },{
-            img: "2",
-            imgUrl: "./static/images/2.jpg"
-          },{
-            img: "3",
-            imgUrl: "./static/images/3.jpg"
-          },{
-            img: "4",
-            imgUrl: "./static/images/4.jpg"
-          }],
-          midImgs: [{
-            img: '1',
-            imgUrl: './static/images/5.jpg'
-          },{
-            img: '2',
-            imgUrl: './static/images/6.jpg'
-          },{
-            img: '3',
-            imgUrl: './static/images/7.jpg'
-          },{
-            img: '4',
-            imgUrl: './static/images/8.jpg'
-          },{
-            img: '5',
-            imgUrl: './static/images/9.jpg'
-          },{
-            img: '6',
-            imgUrl: './static/images/10.jpg'
-          }],
+          // topImgs: [{
+          //   img: "1",
+          //   imgUrl: "./static/images/1.jpg"
+          // },{
+          //   img: "2",
+          //   imgUrl: "./static/images/2.jpg"
+          // },{
+          //   img: "3",
+          //   imgUrl: "./static/images/3.jpg"
+          // },{
+          //   img: "4",
+          //   imgUrl: "./static/images/4.jpg"
+          // }],
+          // midImgs: [{
+          //   img: '1',
+          //   imgUrl: './static/images/5.jpg'
+          // },{
+          //   img: '2',
+          //   imgUrl: './static/images/6.jpg'
+          // },{
+          //   img: '3',
+          //   imgUrl: './static/images/7.jpg'
+          // },{
+          //   img: '4',
+          //   imgUrl: './static/images/8.jpg'
+          // },{
+          //   img: '5',
+          //   imgUrl: './static/images/9.jpg'
+          // },{
+          //   img: '6',
+          //   imgUrl: './static/images/10.jpg'
+          // }],
           // 以下是注册,分离时特别注意一下
-          ruleForm2: {
-          pass: '',
-          checkPass: '',
-          age: ''
-        },
-        rules2: {
-          pass: [
-            { validator: validatePass, trigger: 'blur' }
-          ],
-          checkPass: [
-            { validator: validatePass2, trigger: 'blur' }
-          ],
-          age: [
-            { validator: checkAge, trigger: 'blur' }
-          ]
-        }
+        //   ruleForm2: {
+        //   pass: '',
+        //   checkPass: '',
+        //   age: ''
+        // },
+        // rules2: {
+        //   pass: [
+        //     { validator: validatePass, trigger: 'blur' }
+        //   ],
+        //   checkPass: [
+        //     { validator: validatePass2, trigger: 'blur' }
+        //   ],
+        //   age: [
+        //     { validator: checkAge, trigger: 'blur' }
+        //   ]
+        // }
          
       // return {
         
       // };
-      };
-       var checkAge = (rule, value, callback) => {
-        if (!value) {
-          return callback(new Error('年龄不能为空'));
-        }
-        setTimeout(() => {
-          if (!Number.isInteger(value)) {
-            callback(new Error('请输入数字值'));
-          } else {
-            if (value < 18) {
-              callback(new Error('必须年满18岁'));
-            } else {
-              callback();
-            }
-          }
-        }, 1000);
-      };
-      var validatePass = (rule, value, callback) => {
-        if (value === '') {
-          callback(new Error('请输入密码'));
-        } else {
-          if (this.ruleForm2.checkPass !== '') {
-            this.$refs.ruleForm2.validateField('checkPass');
-          }
-          callback();
-        }
-      };
-      var validatePass2 = (rule, value, callback) => {
-        if (value === '') {
-          callback(new Error('请再次输入密码'));
-        } else if (value !== this.ruleForm2.pass) {
-          callback(new Error('两次输入密码不一致!'));
-        } else {
-          callback();
-        }
-      };
-    },
-    methods: {
-      submitForm(formName) {
-        this.$refs[formName].validate((valid) => {
-          if (valid) {
-            alert('submit!');
-          } else {
-            console.log('error submit!!');
-            return false;
-          }
-        });
-      },
-      resetForm(formName) {
-        this.$refs[formName].resetFields();
-      }
+    //   };
+    //    var checkAge = (rule, value, callback) => {
+    //     if (!value) {
+    //       return callback(new Error('年龄不能为空'));
+    //     }
+    //     setTimeout(() => {
+    //       if (!Number.isInteger(value)) {
+    //         callback(new Error('请输入数字值'));
+    //       } else {
+    //         if (value < 18) {
+    //           callback(new Error('必须年满18岁'));
+    //         } else {
+    //           callback();
+    //         }
+    //       }
+    //     }, 1000);
+    //   };
+    //   var validatePass = (rule, value, callback) => {
+    //     if (value === '') {
+    //       callback(new Error('请输入密码'));
+    //     } else {
+    //       if (this.ruleForm2.checkPass !== '') {
+    //         this.$refs.ruleForm2.validateField('checkPass');
+    //       }
+    //       callback();
+    //     }
+    //   };
+    //   var validatePass2 = (rule, value, callback) => {
+    //     if (value === '') {
+    //       callback(new Error('请再次输入密码'));
+    //     } else if (value !== this.ruleForm2.pass) {
+    //       callback(new Error('两次输入密码不一致!'));
+    //     } else {
+    //       callback();
+    //     }
+    //   };
+    // },
+    // methods: {
+    //   submitForm(formName) {
+    //     this.$refs[formName].validate((valid) => {
+    //       if (valid) {
+    //         alert('submit!');
+    //       } else {
+    //         console.log('error submit!!');
+    //         return false;
+    //       }
+    //     });
+    //   },
+    //   resetForm(formName) {
+    //     this.$refs[formName].resetFields();
+       };
     }
   }
 </script>
