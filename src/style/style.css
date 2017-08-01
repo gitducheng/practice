@@ -205,7 +205,7 @@ position: absolute;
 }
 .login-wrap{
 	width: 35%;
-	margin: 100px auto 0;
+	margin: 100px auto 100px;
 	background-color: #fff;
 	border-radius: 4px;
 	box-shadow: 0 0 8px rgba(0,0,0,.3);
