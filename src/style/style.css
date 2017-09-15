@@ -274,3 +274,75 @@ position: absolute;
 	line-height: 1.3;
 	color: #333;
 }
+.write{
+	width: 100%;
+}
+.writeBtn{
+	display: block;
+	font-size: 20px;
+	width: 60px;
+	height: 30px;
+	color: gray;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin: 20px auto;
+	padding-top: 5px;
+}
+.writeBtn:hover{
+	background-color: #c4c4c4;
+	color: #fff;
+}
+.editor{
+	width: 80%;
+	margin: 0 auto;
+}
+.rizhi{
+	font-size: 18px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+#submit{
+	display: block;
+	margin: 20px auto;
+}
+
+/*  write */
+.quill-editor {
+  height: 100%;
+}
+
+  .ql-container {
+    height: 480px !important;
+  }
+
+
+.limit {
+  height: 30px;
+  border: 1px solid #ccc;
+  line-height: 30px;
+  text-align: right;
+}
+.limit span{
+	color: #ee2a7b;
+}
+
+.ql-snow .ql-editor img {
+  max-width: 480px;
+}
+
+.ql-editor .ql-video {
+  max-width: 480px;
+}
+#articleWrap{
+	width: 70%;
+	margin: 0 auto;
+
+}
+#title{
+	font-size: 24px;
+	font-weight: bolder;
+	text-align: center;
+	margin: 20px auto;
+}

@@ -2,7 +2,7 @@
   <div>
     <div class="footer">
     <el-row class="footer-msg">
-        <el-col :span="8" class="footer-item" v-for="item in lists">
+        <el-col :span="8" class="footer-item" v-for="item in lists" key="">
           <i class="el-icon-share"></i>
           <p>{{item.msg}}</p>
         </el-col>

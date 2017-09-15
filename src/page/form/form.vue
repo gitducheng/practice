@@ -2,7 +2,7 @@
 	<div>
 		<div class="search-section">
     <div class="form-bg">
-      <el-input class="footer-search" v-model="input" placeholder="请输入内容"></el-input>
+      <el-input class="footer-search" placeholder="请输入内容"></el-input>
       <el-button type="primary" icon="search">搜索</el-button>
       <div class="resgister">
         <el-form :model="ruleForm2" :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">

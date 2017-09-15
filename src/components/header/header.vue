@@ -10,9 +10,9 @@
         <el-menu-item index="/">首页</el-menu-item>
         <el-menu-item index="/user/article">文章</el-menu-item>
         <el-menu-item index="/user/life">生活风格</el-menu-item>
-        <el-menu-item index="/user/info">关于</el-menu-item>
-        <el-menu-item index="/user/">登录</el-menu-item>
-        <el-menu-item index="/user/">注册</el-menu-item>
+        <el-menu-item index="/user/write">关于</el-menu-item>
+        <el-menu-item index="/user/login">登录</el-menu-item>
+        <el-menu-item index="/user/resgiter">注册</el-menu-item>
         </el-menu>
       </el-col>
        <el-col :span="8" class="nav-right">

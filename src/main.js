@@ -6,10 +6,12 @@ import routes from './config/routes'
 import VueRouter from 'vue-router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
+import VueQuillEditor from 'vue-quill-editor'
 
+Vue.use(VueQuillEditor)
 Vue.use(VueRouter)
 Vue.use(ElementUI)
-
+        
 const router = new VueRouter({
 	routes,
 	mode: 'history'

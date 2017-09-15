@@ -7,7 +7,7 @@
       </div>
       <div class="about-item">
         <el-row :gutter="20">
-          <el-col :span="8" v-for="item in lists">
+          <el-col :span="8" v-for="item in lists" key="">
             <div class="item">
               <div class="item-top">
                 <h3>{{item.h3}}</h3>
