@@ -2,6 +2,9 @@ const path = require('path')
 const glob = require('glob')
 const express = require('express')
 const bodyParser = require('body-parser')
+const session = require('express-session')
+const cookieParser = require('cookie-parser')
+
 
 //const fs = require('fs')
 
@@ -11,10 +14,29 @@ const app = module.exports = express()
 //     { console.error(err); return; } 
 //   console.log('ok'); 
 // });
+app.use(cookieParser());
+app.use(session({
+resave: true, 
+saveUninitialized: false, 
+secret: 'love'
+}));
 app.use(express.static('../dist'));
 app.use(bodyParser.json());
-// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
+//以下应该放在这里吗？
+app.use(function(req,res,next){
+if (!req.session.user) {
+if(req.url=="/api/login"){
+next();
+}
+else
+{
+res.redirect('/user/login');
+}
+} else if (req.session.user) {
+next();
+}
+});
 
 // 载入所有控制器
 const controllers = glob.sync('./controllers/**/*.js', { cwd: __dirname })

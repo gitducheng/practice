@@ -14,7 +14,6 @@ router.post('/login', (req, res) => {
   var username = req.body.name;
   var password = req.body.pass;
 
-  
     //connection.connect();
     var  userGetSql = 'SELECT * FROM userinfo';
 	connection.query(userGetSql,function (err, result) {
@@ -23,14 +22,21 @@ router.post('/login', (req, res) => {
           return;
         }
         if(result[0].UserName==username&&result[0].UserPass==password){
-        	res.jsonp(result[0]);
-        	connection.end();
-        	//res.send(body)
+        	//res.jsonp(result[0]);
+        	req.session.user = "ceshi";
+        	console.log(req.session.user);
+        	res.jsonp(req.session.user);
         	return;
         }  
         res.jsonp("error");        
 	});
-
- 
 })
 
+router.post('/resgiter',(req, res) => {
+	var name = req.body.name;
+	var pass = req.body.pass;
+	var email = req.body.email;
+
+	var resgiterData = 'INSERT INTO userinfo (name,pass,email) VALUES ("'+name+'","'+pass+'","'+email+'")';
+	//connection.query(resgiterData,function())
+})
