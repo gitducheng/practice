@@ -8,11 +8,11 @@
       <el-col :span="16">
 		    <el-menu class="nav-left" mode="horizontal" router>
         <el-menu-item index="/">首页</el-menu-item>
-        <el-menu-item index="/user/article">文章</el-menu-item>
-        <el-menu-item index="/user/life">生活风格</el-menu-item>
-        <el-menu-item index="/user/write">关于</el-menu-item>
-        <el-menu-item index="/user/login">登录</el-menu-item>
-        <el-menu-item index="/user/resgiter">注册</el-menu-item>
+        <el-menu-item index="/user/article">评论区</el-menu-item>
+        <el-menu-item index="/user/life">文章目录</el-menu-item>
+        <el-menu-item index="/user/write">写作</el-menu-item>
+        <el-menu-item index="/user/login" :class="{logDisplay:isLog}">登录/注册</el-menu-item>
+        <el-menu-item index="/user/login" :class="{logDisplay:!isLog}">退出登录</el-menu-item>
         </el-menu>
       </el-col>
        <el-col :span="8" class="nav-right">
@@ -26,6 +26,17 @@
 
 <script>
 	export default {
-		
+		  data(){
+        return {
+          isLog:!this.$route.params.logDisplay
+        }
+      }
 	}
 </script>
+
+<style>
+  .logDisplay{
+    display: none;
+  }
+  
+</style>

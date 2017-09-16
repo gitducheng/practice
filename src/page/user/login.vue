@@ -86,8 +86,7 @@ import axios from 'axios'
           pass:this.dynamicValidateForm.pass
           })
           .then(function(response){
-             console.log(response);
-            _this.$router.push('/');
+            _this.$router.push({path:'/',params:{logDisplay:true}});
           })
           .catch(function(err){
             console.log(err);
@@ -97,11 +96,17 @@ import axios from 'axios'
         this.$refs[formName].resetFields();
       },
       submitForm2(formName) {
-        this.$refs[formName].validate((valid) => {
-          if (valid) {
-            alert(valid);
-          } 
-        });
+        axios.post('/api/resgiter',{
+          name: this.dynamicValidateForm2.name,
+          pass: this.dynamicValidateForm2.pass,
+          email: this.dynamicValidateForm2.email
+        })
+        .then(function(result){
+          alert("注册成功！");
+        })
+        .catch(function(err){
+          console.log(err);
+        })
       },
       resetForm2(formName) {
         this.$refs[formName].resetFields();
