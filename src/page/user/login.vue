@@ -79,14 +79,14 @@ import axios from 'axios'
       };
     },
    methods: {
-      submitForm(formName) {
+      submitForm(formName) { 
         var _this = this;
         axios.post('/api/login',{
           name:this.dynamicValidateForm.name,
           pass:this.dynamicValidateForm.pass
           })
           .then(function(response){
-            _this.$router.push({path:'/',params:{logDisplay:true}});
+            _this.$router.push('/');
           })
           .catch(function(err){
             console.log(err);

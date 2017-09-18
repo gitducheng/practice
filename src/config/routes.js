@@ -9,6 +9,7 @@ import write from '../page/write/write.vue'
 export default [
 {
 	path: '/',
+	name: 'index',
 	component: index
 },{
 	path: '/user',

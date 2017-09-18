@@ -11,8 +11,8 @@
         <el-menu-item index="/user/article">评论区</el-menu-item>
         <el-menu-item index="/user/life">文章目录</el-menu-item>
         <el-menu-item index="/user/write">写作</el-menu-item>
-        <el-menu-item index="/user/login" :class="{logDisplay:isLog}">登录/注册</el-menu-item>
-        <el-menu-item index="/user/login" :class="{logDisplay:!isLog}">退出登录</el-menu-item>
+        <el-menu-item index="/user/login" :class="{logDisplay:a}">登录/注册</el-menu-item>
+        <el-menu-item index="/user/login" :class="{logDisplay:!a}">退出登录</el-menu-item>
         </el-menu>
       </el-col>
        <el-col :span="8" class="nav-right">
@@ -21,6 +21,7 @@
       </el-row>
     </div>
      <router-view></router-view>
+  
     </div>
 </template>
 
@@ -28,9 +29,10 @@
 	export default {
 		  data(){
         return {
-          isLog:!this.$route.params.logDisplay
+          a:''
         }
       }
+     
 	}
 </script>
 
@@ -38,5 +40,4 @@
   .logDisplay{
     display: none;
   }
-  
 </style>
