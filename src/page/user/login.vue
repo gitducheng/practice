@@ -56,6 +56,7 @@
 
 <script>
 import axios from 'axios'
+//import {mapGetters,mapActions} from 'vuex'
 	export default {
     data() {
       return {
@@ -86,6 +87,7 @@ import axios from 'axios'
           pass:this.dynamicValidateForm.pass
           })
           .then(function(response){
+            _this.$store.dispatch('increment');
             _this.$router.push('/');
           })
           .catch(function(err){

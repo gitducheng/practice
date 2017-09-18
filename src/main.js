@@ -7,6 +7,7 @@ import VueRouter from 'vue-router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import VueQuillEditor from 'vue-quill-editor'
+import store from './store'
 
 Vue.use(VueQuillEditor)
 Vue.use(VueRouter)
@@ -21,6 +22,7 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })
