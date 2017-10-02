@@ -28,7 +28,10 @@ router.post('/login', (req, res) => {
         	res.jsonp(req.session.user);
         	return;
         }  
-        res.jsonp("error");        
+        res.jsonp("error");
+        //新加的，不知道应不应该这样
+        res.writeHead(200, { 'Content-Type': 'text/plain' });
+        res.end('ok');        
 	});
 })
 

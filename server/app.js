@@ -16,27 +16,27 @@ const app = module.exports = express()
 // });
 app.use(cookieParser());
 app.use(session({
-resave: true, 
-saveUninitialized: false, 
-secret: 'love'
+  resave: true,
+  saveUninitialized: false,
+  secret: '12345'
 }));
+
 app.use(express.static('../dist'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 //以下应该放在这里吗？
-app.use(function(req,res,next){
-if (!req.session.user) {
-if(req.url=="/api/login"){
-next();
-}
-else
-{
-res.redirect('/user/login');
-}
-} else if (req.session.user) {
-next();
-}
+app.use(function(req, res, next) {
+  if (!req.session.user) {
+    if (req.url == "/api/login") {
+      next();
+    } else {
+      res.redirect('/user/login');
+    }
+  } else if (req.session.user) {
+    next();
+  }
 });
+
 
 // 载入所有控制器
 const controllers = glob.sync('./controllers/**/*.js', { cwd: __dirname })

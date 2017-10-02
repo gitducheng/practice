@@ -3,7 +3,7 @@
     <div class="web-wrap">
       <el-row :gutter="20">
         <el-col :span="12">
-          <el-row class="web-section" v-for="item in lists_1" :gutter="20" key="">
+          <el-row class="web-section" v-for="item in lists_1" :gutter="20" :key="item.h3">
             <el-col :span="12">
               <h3>{{item.h3}}</h3>
               <p class="web-design">{{item.design}}</p>
@@ -17,7 +17,7 @@
 
         <el-col :span="12">
           <el-collapse accordion>
-          <el-collapse-item v-for="list in lists_2" :title="list.title" :name="list.num" key="">
+          <el-collapse-item v-for="list in lists_2" :title="list.title" :name="list.num" :key="list.num">
           <span class="inline-block"><img src="../../images/11.jpg" alt=""></span><span><p class="web-article">{{list.article}}</p></span>
           </el-collapse-item>
           </el-collapse>
