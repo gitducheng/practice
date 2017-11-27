@@ -19,7 +19,4 @@ import webFooter from "./components/footer/footer"
 	}
 </script>
 
-<style>
-  @import "./style/style.css";
-  @import "./style/reset.css";
-</style>
+

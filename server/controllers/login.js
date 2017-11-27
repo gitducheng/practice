@@ -41,5 +41,12 @@ router.post('/resgiter',(req, res) => {
 	var email = req.body.email;
 
 	var resgiterData = 'INSERT INTO userinfo (name,pass,email) VALUES ("'+name+'","'+pass+'","'+email+'")';
-	//connection.query(resgiterData,function())
+	connection.query(resgiterData,function(err,result){
+    if(err){
+          console.log('[SELECT ERROR] - ',err.message);
+          return;
+    }
+    console.log("resgiter success!");
+  })
+
 })

@@ -121,5 +121,5 @@ import axios from 'axios'
         this.$refs[formName].resetFields();
       }
     }
-  };
+  }
 </script>

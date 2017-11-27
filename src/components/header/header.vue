@@ -11,8 +11,8 @@
         <el-menu-item index="/user/article">评论区</el-menu-item>
         <el-menu-item index="/user/life">文章目录</el-menu-item>
         <el-menu-item index="/user/write">写作</el-menu-item>
-        <el-menu-item index="/user/login" :class="{logDisplay:count}">登录/注册</el-menu-item>
-        <el-menu-item index="/user/login" :class="{logDisplay:!count}">退出登录</el-menu-item>
+        <el-menu-item index="/user/login" :class="{logDisplay:!count}">登录/注册</el-menu-item>
+        <el-menu-item index="/user/login" :class="{logDisplay:count}">退出登录</el-menu-item>
         </el-menu>
       </el-col>
        <el-col :span="8" class="nav-right">
