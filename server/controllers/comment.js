@@ -26,6 +26,7 @@ router.post('/sendComment', (req, res) => {
   var name = req.body.name;
   var time = req.body.time;
   var msg = req.body.msg;
+  
   var inserComment = 'INSERT INTO comment (name,time,msg) VALUES ("'+name+'","'+time+'","'+msg+'")';
   connection.query(inserComment,function(err,result){
       if(err){

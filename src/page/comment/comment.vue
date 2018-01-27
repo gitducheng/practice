@@ -17,7 +17,7 @@
 			<ul>
 				<li v-for="item in lists">
 					<div class="comment-msg">
-						<img class="tx" src="../../../static/images/11.jpg" alt="">
+						<img class="tx" src="../../images/11.jpg" alt="">
 						<div class="people">
 							<p class="name">{{item.name}}</p>
 							<p class="time">30楼{{item.time}}</p>
@@ -59,7 +59,7 @@ function getNowFormatDate() {
             + seperator2 + date.getSeconds();
     return currentdate;
 } 
-getComment();
+//getComment();
 
 	// var lists = [{
 	// 	name: '名字哈哈',
@@ -82,7 +82,8 @@ getComment();
 					msg: this.textarea2
 				})
 				.then(function(response){
-					alert('评论成功!');
+					alert(response);
+					getComment();
 				})
 				.catch(function(err){
 					console.log(err);

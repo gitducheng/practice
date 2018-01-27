@@ -3,7 +3,7 @@ var mysql = require('mysql')
 var connection = mysql.createConnection({
 	host     : 'localhost',       //主机
   	user     : 'root',               //MySQL认证用户名
-  	password : '',        //MySQL认证用户密码123456
+  	password : '123456',        //MySQL认证用户密码123456
   	port: '3306'
 })
 
